@@ -1,0 +1,14 @@
+name: Minha Automacao
+on:
+  push:
+    branches: [main]
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Baixar arquivos
+      uses: actions/checkout@v4
+    - name: Verificar pagina
+      run: test -f index.html
+    - name: Mostrar resultado
+      run: echo "Pagina encontrada!"
